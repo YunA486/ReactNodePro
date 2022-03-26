@@ -8,10 +8,10 @@ function FavoritePage() {
 
     useEffect(() => {
 
-        Axios.post('/api/favorite/getFavoredMovie', {userFrom: localStorage.getItem('userId')})
+        Axios.post('/api/favorite/getFavoredMovie', { userFrom: localStorage.getItem('userId')})
             .then(response => {
                 if(response.data.success){
-                    setFavorites(response.data.Favorites)
+                    setFavorites(response.data.favorites)
                 } else {
                     alert('영화 정보를 가져오는데 실패 했습니다.')
                 }
